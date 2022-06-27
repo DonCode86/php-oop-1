@@ -5,6 +5,7 @@ require_once __DIR__ . '/classes/movie.php';
     new Movie('Titanic', '1997', 'James Cameron'),
     new Movie('Taxi Driver', '1976', 'Martin Scorsese'),
     new Movie('The Shawshank Redemption', '1994', 'Frank Darabont'),
+    new Movie('Ghiaccio', '2022', 'Fabrizio Moro'),
   ]
 ?>
 
@@ -26,6 +27,11 @@ require_once __DIR__ . '/classes/movie.php';
       <h2><?php echo $movie->title; ?></h2>
       <h3><?php echo $movie->year; ?></h3>
       <h4><?php echo $movie->director; ?></h4>
+      <?php if($movie->year > 2010 ) { ?>
+        <p>Questo e' un film recente!</p>
+        <?php } else { ?>
+        <p>Questo non e' un film recente!</p>
+        <?php } ?>
     </li>
     <?php } ?>
   </ul>
